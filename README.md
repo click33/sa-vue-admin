@@ -1,7 +1,7 @@
 
 # sa-admin (vue单页版)
 
-一个多窗口后台模板，流畅、易上手、提高生产力，演示地址：[http://sa-admin.dev33.cn](http://sa-admin.dev33.cn)
+一个多窗口后台模板，流畅、易上手、提高生产力，演示地址：[http://sa-vue-admin.dev33.cn](http://sa-vue-admin.dev33.cn)
 
 :kissing_closed_eyes:  :kissing_closed_eyes:  :kissing_closed_eyes: :kissing_closed_eyes:  :kissing_closed_eyes:  :kissing_closed_eyes: :kissing_closed_eyes:  :kissing_closed_eyes:  :kissing_closed_eyes: :kissing_closed_eyes:  :kissing_closed_eyes:  :kissing_closed_eyes:  :blush:  :blush:  :blush: 
 
