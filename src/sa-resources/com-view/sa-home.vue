@@ -93,7 +93,6 @@
 				<ul style="padding-left: 1em; line-height: 1.5em;">
 					<li><el-link type="primary" href="https://cn.vuejs.org/" target="_blank">JS引擎：Vue @2.6.11</el-link></li>
 					<li><el-link type="primary" href="https://cli.vuejs.org/zh/" target="_blank">脚手架：@vue/cli：@4.0.5</el-link></li>
-					<li><el-link type="primary" href="https://router.vuejs.org/zh/" target="_blank">view路由：@vue-router：@3.1.6</el-link></li>
 					<li><el-link type="primary" href="https://element.eleme.cn/#/zh-CN" target="_blank">UI框架：Element-UI @2.13.0</el-link></li>
 					<li><el-link type="primary" href="http://layer.layui.com/" target="_blank">web弹层：layer @3.1.1</el-link></li>
 					<li><el-link type="primary" href="https://www.swiper.com.cn/" target="_blank">切页动画：Swiper @4.5.0</el-link></li>
@@ -134,6 +133,15 @@
 			</el-divider>
 			<div class="kapian">
 				<ul style="padding-left: 2em; padding-top: 1em; line-height: 1.5em;">
+					
+					<!-- ====================== 一个版本 ===================== -->
+					<li>
+						<b> <el-tag size="mini">版本 v1.0.1</el-tag></b>
+						&nbsp;&nbsp;2020-2-29 
+					</li>
+					<li>去除vue-router</li>
+					<li>增加sa_admin.getView函数，用于跨窗口通信</li>
+					<div><br></div>
 					
 					<!-- ====================== 一个版本 ===================== -->
 					<li>

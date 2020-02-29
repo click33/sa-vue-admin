@@ -202,29 +202,10 @@
 					<swiper class="sa-swiper" :options="swiperOption" ref="mySwiper" >
 						<swiper-slide class="swiper-no-swiping" v-for="tab in tabList" :key="tab.id">
 							<div class="view-fox">
-								<!-- <component v-bind:is="tab.view" :params="tab.params" v-if="tab.is_rend" :key="tab.id"></component> -->
-								<keep-alive v-if="tab.is_rend">
-									<router-view :name="tab.path" :params="tab.params"></router-view>
-								</keep-alive>
+								<component v-bind:is="tab.view" :params="tab.params" :ref="'view-'+tab.id" v-if="tab.is_rend" :key="tab.id"></component>
 							</div>
 						</swiper-slide>
 					</swiper>
-					
-					
-					<!-- <p>
-						<router-link :to="r.path" v-for="(r, index) in tabList" :key="index">
-							go--- {{r.path}}<br>
-						</router-link>
-						<router-link to="/v1-4">go---4</router-link><br>
-					</p>
-					<div style="border: 1px #000 solid;" v-for="(r, index) in tabList" :key="index">
-						<h4>第{{r.path}}视图</h4>
-									<span style="color: red;">{{r.path}}</span>
-						<keep-alive>
-							<router-view :name="r.path"></router-view>
-						</keep-alive>
-					</div> -->
-					
 					
 					<!-- 下托拽：悬浮打开 -->
 					<div class="shade-fox" v-if="is_drag" @dragover="$event.preventDefault();" @drop="rightTab = dragTab; right_xf();">

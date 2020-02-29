@@ -25,11 +25,9 @@ export default {
 			hide_close: true,	// 隐藏关闭键 
 			is_rend: true,
 		}
-		this.addRoutesByTab(homeTab);
-		// var homeTab = {id: '-1', name: '首页', path: '/v-1', hide_close: true, components: {'/v-1': { template: '<div>homTab</div>' }}  };
 		
 		return {
-			version: 'v1.0.0',		// 当前版本
+			version: 'v1.0.1',		// 当前版本
 			update_time: '2020-02-29',		// 更新日期 
 			title: '',//'SA-后台模板',				// 页面标题  
 			logo_url: '',	// logo地址 
@@ -202,17 +200,7 @@ export default {
 			}
 			return menu_list;
 		},
-		// 添加一个路由, 根据tab 
-		addRoutesByTab: function(tab) {
-			tab.path = '/' + tab.id;
-			var route = {
-				name: tab.path,
-				path: tab.path,
-				components: {}
-			}
-			route.components[tab.path] = tab.view;
-			this.$router.addRoutes([route]);
-		},
+		
 		// ------------------- 对外预留 end --------------------
 		// 打开所有菜单的折叠
 		show_all_menu: function() {
@@ -366,7 +354,6 @@ export default {
 		// 右键 复制
 		right_copy: function() {
 			var tab = {id: new Date().getTime(), name: this.rightTab.name, view: this.rightTab.view};
-			this.addRoutesByTab(tab);
 			this.showTab(tab);
 		},
 		// 右键 悬浮 
@@ -529,24 +516,24 @@ export default {
 		// ------------------- tab title 相关 --------------------
 		// 在一个tab上, 初始化 view 
 		initTabView: function(tab) {
-			// 如果已经初始化过了
+			// 如果已经初始化过了 
 			if(tab.is_init_view) {
 				return;
 			}
 			// 开始初始化 
-			// tab.params = tab.params || {};	// 给参数一个默认值
+			tab.params = tab.params || {};	// 给参数一个默认值 
 			tab.is_rend = true;			// 是否显示, 利用此来强制刷新子组件 
 			
 			// 如果是一个.html页面 
-			if(tab.url && tab.url != '') {
-				// TODO 
+			if(tab.url) {
+				let template = '<div class="iframe-view-box"><iframe class="iframe-view" src="' + tab.url + '"></iframe></div>';
+				tab.view = {template: template};
 				return tab.is_init_view = true;
 			}
-			// 如果是指定的一个.vue视图地址 
-			// if(typeof(tab.view) === 'string') {
-			// 	return tab.is_init_view = true;
-			// }
 			
+			// 如果是 
+			
+			return tab.is_init_view = true;
 		},
 		// 关闭tab - 无动画版本
 		closeTab_not_an: function(tab) {
@@ -610,7 +597,6 @@ export default {
 			}
 			// 然后显示 
 			this.$nextTick(function() {
-				this.$router.push(tab.path); 
 				
 				this.gotoSlide(tab.id);
 				// 如果是无tabbar模式 
@@ -664,17 +650,7 @@ export default {
 				return;
 			}
 			// 创建tab
-			let template = '<div class="iframe-view-box"><iframe class="iframe-view" src="' + this.atUrl + '"></iframe></div>';
-			var tab = {id: new Date().getTime(), name: this.atTitle, url: this.atUrl, view: {template: template}};
-			// 创建路由
-			tab.path = '/' + tab.id;
-			let components = {};
-			components[tab.path] = tab.view;
-			var route = {
-				path: tab.path,	// 路由路径 
-				components: components,		// 路由视图
-			}
-			this.$router.addRoutes([route]); 
+			var tab = {id: new Date().getTime(), name: this.atTitle, url: this.atUrl};
 			// 打开tab 
 			this.showTab(tab);
 			// 关闭并清空
@@ -780,7 +756,7 @@ export default {
 			}
 			// 获取锚链接中的id
 			var hash = location.hash;
-			var id = hash.replace('#/', '');
+			var id = hash.replace('#', '');
 			
 			if(id == '') {
 				this.showHome();
@@ -807,7 +783,7 @@ export default {
 			if(this.is_reme_open == false) {
 				return;
 			}
-			// location.hash = this.nativeTab.id;
+			location.hash = this.nativeTab.id;
 		},
 		// ------------------- swiper相关 -------------------- 
 		// 初始化swiper 
@@ -873,6 +849,13 @@ export default {
 		sss: function() {
 			
 		},
+		// 获取指定视图的对象，用来跨视图通信 
+		getView: function(id) {
+			var com = this.$refs['view-' + id];
+			if(com) {
+				return com[0];
+			}
+		},
 		// 悬浮或者, 全屏显示tab 
 		// title=标题,  view=要显示的组件, params=参数 ,way= 方式(1=全屏,2=悬浮打开)
 		dialogTabShow: function(title, view, params, way) {	
@@ -920,7 +903,7 @@ export default {
 		},
 		// 打印版本
 		printVesion: function() {
-			console.log('欢迎使用sa-admin，当前版本：' + this.version + "，更新于：" + this.update_time + "，GitHub地址：" + this.github_url);
+			console.log('欢迎使用sa-admin(vue单页版)，当前版本：' + this.version + "，更新于：" + this.update_time + "，GitHub地址：" + this.github_url);
 			console.log('如在使用中发现任何bug或者疑问，请加入QQ群交流：782974737，点击加入：' + 'https://jq.qq.com/?_wv=1027&k=5DHN5Ib');
 		},
 		// 初始化window相关配置 
@@ -942,10 +925,10 @@ export default {
 			}
 			
 			// 监听锚链接变动
-			// window.onhashchange = function() {
-			// 	// console.log('锚链接变动了');
-			// 	sa_admin.showTabByHash();
-			// }
+			window.onhashchange = function() {
+				// console.log('锚链接变动了');
+				this.showTabByHash();
+			}.bind(this)
 			
 			// 一直更新时间
 			if(window.abcdefghijklmn) {

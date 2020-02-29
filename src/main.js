@@ -9,14 +9,6 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 Vue.use(ElementUI);
 
-// 安装 vue-router 
-import VueRouter from 'vue-router'
-Vue.use(VueRouter);
-import routes from './sa-resources/index/sa-routes.js';
-const router = new VueRouter({
-	routes: routes
-});
-
 // 安装jquery与layer, (cdn方式引入的直接挂载到原型)
 Vue.prototype.$ = window.$;
 Vue.prototype.layer = window.layer;
@@ -33,6 +25,5 @@ Vue.prototype.SaAdminInIt = SaAdminInIt;
 
 // 打开vue 
 new Vue({
-	render: h => h(App),
-	router: router
+	render: h => h(App)
 }).$mount('#app')

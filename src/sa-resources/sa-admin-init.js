@@ -30,11 +30,14 @@ export default function(sa_admin, sa) {
 	
 	// ================================= 示例：js操作菜单  =================================
 	
-	// this.sa_admin.showHome();            // 显示主页选项卡 
-	// this.sa_admin.showTabById('home');    // 显示一个选项卡, 根据id
-	// this.sa_admin.closeTabById('5-1');    // 关闭一个选项卡，根据 id （ 第二个参数可填关闭后的回调函数 ）
-	// this.sa_admin.showMenuById('5-2');    // 打开一个 菜单，根据 id
-
+	// sa_admin.showHome();            // 显示主页选项卡 
+	// sa_admin.showTabById('home');    // 显示一个选项卡, 根据id
+	// sa_admin.closeTabById('5-1');    // 关闭一个选项卡，根据 id （ 第二个参数可填关闭后的回调函数 ）
+	// sa_admin.showMenuById('5-2');    // 打开一个 菜单，根据 id
+	// sa_admin.getView('5-2').f5();// 获取指定视图的组件对象，并调用其f5()函数，一般用于跨窗口通信 
+	// ================================= 跨窗口通信  =================================
+	
+	
 
 	// ================================= 示例：设置登录后的头像处，下拉可以出现的选项  =================================
 	sa_admin.dropList = [ // 头像点击处可操作的选项
@@ -70,7 +73,8 @@ export default function(sa_admin, sa) {
 	sa_admin.init();
 	// 或者这样: 
 	// sa_admin.init({
-	// 	is_show_tabbar: false	// 关闭tabbar栏, 取而显示的是一个面包屑导航栏 
+	// 	is_show_tabbar: false,	// 关闭tabbar栏, 取而显示的是一个面包屑导航栏 
+	//  is_reme_open: false		// 是否记住上一次最后打开的窗口, 默认为true, 配置为false后, 每次刷新不再自动打开上一次最后打开的窗口(也不再有锚链接智能tab调准)
 	// }); 
 
 

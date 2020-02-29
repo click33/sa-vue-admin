@@ -106,12 +106,12 @@ export default [
 		info: '示例：外部链接',
 		childList: [
 			{id: '8-1', name: '百度一下', url: 'https://www.baidu.com/', is_blank: true},
-			{id: '8-3', name: 'sa-token', url: 'http://sa-token.dev33.cn/', is_blank: true},
-			{id: '8-4', name: 'SqlFly', url: 'https://sqlfly.dev33.cn/', is_blank: true},
 			{id: '8-6', name: '颜值排行榜', url: 'http://yanzhi21.com/', is_blank: true},
 			{id: '8-7', name: 'jq22插件库', url: 'http://www.jq22.com/', is_blank: true},
 			{id: '8-2', name: 'uni-app', url: 'https://uniapp.dcloud.io/', is_blank: true},
 			{id: '8-11', name: 'sa-admin-iframe版', url: 'http://sa-admin.dev33.cn/', is_blank: true},
+			{id: '8-3', name: 'sa-token', url: 'http://sa-token.dev33.cn/',},	// iframe打开
+			{id: '8-4', name: 'SqlFly', url: 'https://sqlfly.dev33.cn/',},		// iframe打开
 		]
 	},
 	{

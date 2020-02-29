@@ -14,7 +14,6 @@
 ## 框架选型
 - JS引擎：[Vue @2.6.11](https://cn.vuejs.org/)
 - 脚手架：[@vue/cli @4.0.5](https://cli.vuejs.org/zh/)
-- view路由：[@vue-router @3.1.6](https://router.vuejs.org/zh/)
 - UI框架：[Element-UI @2.13.0](https://element.eleme.cn/#/zh-CN)
 - web弹层：[layer @3.1.1](http://layer.layui.com/)
 - 切页动画：[Swiper @4.5.0](https://www.swiper.com.cn/)
