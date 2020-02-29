@@ -907,7 +907,7 @@ export default {
 				maxlength: 99999999,
 			}, function(pass, index){
 				this.layer.close(index)					
-			});
+			}.bind(this));
 			var se = '#layui-layer' + index + ' .layui-layer-input';
 			var d = document.querySelector(se);
 			d.oninput = function() {
