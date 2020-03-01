@@ -34,9 +34,13 @@ export default function(sa_admin, sa) {
 	// sa_admin.showTabById('home');    // 显示一个选项卡, 根据id
 	// sa_admin.closeTabById('5-1');    // 关闭一个选项卡，根据 id （ 第二个参数可填关闭后的回调函数 ）
 	// sa_admin.showMenuById('5-2');    // 打开一个 菜单，根据 id
-	// sa_admin.getView('5-2').f5();// 获取指定视图的组件对象，并调用其f5()函数，一般用于跨窗口通信 
-	// ================================= 跨窗口通信  =================================
 	
+	// 跨窗口通信
+	// sa_admin.getView('5-2').f5();// 获取指定视图的组件对象，并调用其f5()函数，一般用于跨窗口通信 
+	
+	// 以下写法，调用tab打开新窗口
+	// var tab = {id: '5-1', name: '用户添加', view: () => import('@/sa-view/user/user-add.vue'), params: {username: '王铁汉2'} };
+	// sa_admin.showTab(tab);
 	
 
 	// ================================= 示例：设置登录后的头像处，下拉可以出现的选项  =================================
