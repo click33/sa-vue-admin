@@ -27,8 +27,8 @@ export default {
 		}
 		
 		return {
-			version: 'v1.0.2',		// 当前版本
-			update_time: '2020-03-02',		// 更新日期 
+			version: 'v1.0.3',		// 当前版本
+			update_time: '2020-03-05',		// 更新日期 
 			title: '',//'SA-后台模板',				// 页面标题  
 			logo_url: '',	// logo地址 
 			icon_url: '',	// icon地址 

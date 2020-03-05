@@ -170,7 +170,7 @@
 		
 						<div class="tab-title-box" :style="{left: scrollX + 'px'}" @dblclick.stop="">
 							<div v-for="tab in tabList" :key="tab.id" :id=" 'tab-' + tab.id " class="tab-title" :class=" (tab == nativeTab ? 'tab-native' : '') "
-								@click="showTab(tab)" @dblclick="rightTab = tab; right_f5()" @contextmenu.prevent="right_showMenu(tab, $event)" 
+								@click="showTab(tab)" @contextmenu.prevent="right_showMenu(tab, $event)" 
 								draggable="true" @dragstart="is_drag = true; dragTab = tab"
 								@dragend="is_drag = false;">
 								<div class="tab-title-2">
