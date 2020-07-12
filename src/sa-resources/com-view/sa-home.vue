@@ -77,6 +77,10 @@
 							<el-link type="primary" href="javascript:parent.sa_admin.showMenuById('1-11');">点击打开，在线快速提交意见反馈(新)</el-link>
 						</li> -->
 						<li>
+							<b>新增需求墙：</b>
+							<el-link type="primary" href="http://sa-app.dev33.cn/wall.html?name=sa-vue-admin" target="_blank">点击打开，在线快速提交需求(新)</el-link>
+						</li>
+						<li>
 							<b>开源不易，求鼓励，给个star吧</b>
 							<!-- <iframe src="https://ghbtns.com/github-btn.html?user=click33&repo=sa-admin&type=watch&count=true"
 								style="width: 150px; height: 25px; display: inline-block; border: 0px; vertical-align: middle; margin-left: 10px;"></iframe> -->
