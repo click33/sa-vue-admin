@@ -66,7 +66,7 @@
 						</li>
 						<li>
 							<b>码云地址：</b>
-							<el-link type="primary" href="https://gitee.com/sz6/sa-vue-admin" target="_blank">https://gitee.com/sz6/sa-vue-admin</el-link>
+							<el-link type="primary" href="https://gitee.com/click33/sa-vue-admin" target="_blank">https://gitee.com/click33/sa-vue-admin</el-link>
 						</li>
 						<li>
 							<b>GitHub地址：</b>
